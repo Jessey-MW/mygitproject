@@ -1,16 +1,27 @@
-import argparse,json
+import random
+import logging
 
-# parser = argparse.ArgumentParser()
-# parser.description='帮助信息'
-# parser.add_argument("-a", help="这是A",type=str,default="缺陷")
-# parser.add_argument("-b", help="这是B",type=str,default="需求")
-# args = parser.parse_args()
-# if args.a:
-#     print("这是A",args.a)
-# if args.b:
-#     print("这是B",args.b)
+logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-def read_json(path):
-    file = open(path, "rb")
-    fileJson = json.loads(file)
-    print(fileJson)
+def create_random_str(Number=127):
+    """
+    随机生成验证码
+    :param Number: 需要生成的长度
+    :return: 返回验证码
+    """
+    random_list = ["大","小","等"]
+    random_Le = ""
+    count = 0
+    while True:
+        random_Letter = random.sample(random_list,1)
+        for Letter in random_Letter:
+            random_Le+=Letter
+            count+=1
+        if count == Number:
+            break
+    # random_str = random_Letter + str(random.randint(0, 9))
+    print(random_Le)
+    print(len(random_Le))
+    logger.info(random_Le)
+
+create_random_str()

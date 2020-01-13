@@ -16,7 +16,7 @@ pipeline {
       parallel {
         stage('单元测试') {
           steps {
-            xxxx
+            shell 'pwd' 
           }
         }
         stage('接口测试') {

@@ -16,8 +16,7 @@ pipeline {
       parallel {
         stage('单元测试') {
           steps {
-            echo '单元测试中...'
-            echo '单元测试完成.'
+            xxxx
           }
         }
         stage('接口测试') {
